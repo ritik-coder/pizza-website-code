@@ -1,0 +1,46 @@
+@import './variable';
+body{
+    font-family:sans-serif;
+    color:$dark;
+    height: 2000px;
+
+}
+nav li:last-child a{
+    background-color:$primary;
+    &:hover {
+        background-color:$primary-hover;
+    }
+}
+
+nav li a{
+    transition: all .3s ease-in-out;
+    font-weight: bold;
+    &:hover {
+        color: $primary;
+    }
+}
+
+.btn {
+    color: $pure;
+    transition: all .3s ease-in-out;
+    background-color: $primary;
+    &:hover {
+        background-color: $primary-hover;
+    }
+}
+
+section.hero{
+    background: $secondary;
+}
+
+.add_to_cart{
+    border: 2px solid $primary;
+    color:$primary;
+    transition: all .3s ease-in-out;
+    &:hover {
+        color: $pure;
+        background-color: $primary;
+        border-color: $pure;
+    }
+   
+}

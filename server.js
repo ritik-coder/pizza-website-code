@@ -10,13 +10,17 @@ const expresslayout=require('express-ejs-layouts')
 PORT=process.env.PORT || 3300
 
 
+//use for the knowledge of server to tells about the file index
+app.use(express.static('public'))
 //send the request
 app.get('/',(req,res)=>{
     res.render('home')
 })
+
 app.get('/about',(req,res)=>{
     res.render('about')
 })
+
 app.get('/contact',(req,res)=>{
     res.render('contact')
 })
