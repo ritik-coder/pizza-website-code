@@ -23,13 +23,23 @@ nav li a{
 .btn {
     color: $pure;
     transition: all .3s ease-in-out;
+    font: bold;
     background-color: $primary;
     &:hover {
         background-color: $primary-hover;
     }
 }
 
-section.hero{
+// section.hero{
+//     background: $secondary;
+// }
+section.login{
+    background: $secondary;
+}
+section.register{
+    background: $secondary;
+}
+section.cart{
     background: $secondary;
 }
 

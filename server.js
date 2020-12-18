@@ -12,24 +12,29 @@ PORT=process.env.PORT || 3300
 
 //use for the knowledge of server to tells about the file index
 app.use(express.static('public'))
-//send the request
-app.get('/',(req,res)=>{
-    res.render('home')
-})
-
-app.get('/about',(req,res)=>{
-    res.render('about')
-})
-
-app.get('/contact',(req,res)=>{
-    res.render('contact')
-})
-
 
 //set template engine
 app.use(expresslayout)
 app.set('views',path.join(__dirname,'resources/views'))
 app.set('view engine','ejs')
+
+
+//send the request
+app.get('/',(req,res)=>{
+    res.render('home')
+})
+
+app.get('/cart',(req,res)=>{
+    res.render('customer/cart')
+})
+
+app.get('/login',(req,res)=>{
+    res.render('Auth/login')
+})
+app.get('/register',(req,res)=>{
+    res.render('Auth/Register')
+})
+
 
 
 //listen the port

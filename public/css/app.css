@@ -24,6 +24,7 @@ nav li a:hover {
 .btn {
   color: #fff;
   transition: all 0.3s ease-in-out;
+  font: bold;
   background-color: #FE5F1E;
 }
 
@@ -31,7 +32,15 @@ nav li a:hover {
   background-color: #b23301;
 }
 
-section.hero {
+section.login {
+  background: #F8F8F8;
+}
+
+section.register {
+  background: #F8F8F8;
+}
+
+section.cart {
   background: #F8F8F8;
 }
 
