@@ -1,8 +1,10 @@
 @import './variable';
+@import '~noty/src/noty.scss';
+@import '~noty/src/themes/mint.scss';
 body{
     font-family:sans-serif;
     color:$dark;
-    height: 2000px;
+    // height: 2000px;
 
 }
 nav li:last-child a{
@@ -30,9 +32,9 @@ nav li a{
     }
 }
 
-// section.hero{
-//     background: $secondary;
-// }
+section.hero{
+    background: $secondary;
+}
 section.login{
     background: $secondary;
 }
@@ -52,5 +54,12 @@ section.cart{
         background-color: $primary;
         border-color: $pure;
     }
+    &:focus {
+        outline: none;
+    }
    
+}
+.noty_theme__mint {
+    border-radius: 50px!important;
+    padding-left: 8px!important;
 }

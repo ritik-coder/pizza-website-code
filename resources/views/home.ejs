@@ -23,160 +23,32 @@
 
         <div class="grid grid-cols-4 col-gap-12 row-gap-16">    
 
+
+
+            <% Pizzas.forEach(function(pizza){ %>
+
             <div class="w-64">
                 <div> 
-                    <img class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="">
+                    <img class="h-40 mb-4 mx-auto" src="/img/<%= pizza.image%>" alt="">
                 </div>
                 <div class="text-center">
                     <h2 class="py-2 text-xl ">  </h2>
-                    <span class="small py-1 mb-3 px-4 uppercase text-xs rounded-full font-bold ">large</span>
+                    <span class="small py-1 mb-3 px-4 uppercase text-xs rounded-full font-bold "><%= pizza.size %></span>
 
                     <div class="flex  items-center justify-around mt-6">
-                        <span class="font-bold">RS. 200</span>
+                        <span class="font-bold">RS. <%= pizza.price %></span>
 
-                        <!-- stringy is used to convert the object to string -->
-                        <button  data-pizza="" class="add_to_cart py-1 px-6 rounded-full justify-between flex font-bold items-center">
+                        <!-- stringy is used to convert the object to string,, JSON.stringify bascially used to convert the string--> 
+                        <button data-pizza="<%= JSON.stringify(pizza) %>" class="add_to_cart py-1 px-6 rounded-full justify-between flex font-bold items-center">
                             <span>+</span>            
                             <span class=" ml-6">Add</span>
-                        </button>
+                        </button> 
                     </div>
                 </div>
             </div>
-            <div class="w-64">
-                <div> 
-                    <img class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="">
-                </div>
-                <div class="text-center">
-                    <h2 class="py-2 text-xl ">  </h2>
-                    <span class="small py-1 mb-3 px-4 uppercase text-xs rounded-full font-bold ">large</span>
-
-                    <div class="flex  items-center justify-around mt-6">
-                        <span class="font-bold">RS. 200</span>
-
-                        <!-- stringy is used to convert the object to string -->
-                        <button  data-pizza="" class="add_to_cart py-1 px-6 rounded-full justify-between flex font-bold items-center">
-                            <span>+</span>            
-                            <span class=" ml-6">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <div> 
-                    <img class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="">
-                </div>
-                <div class="text-center">
-                    <h2 class="py-2 text-xl ">  </h2>
-                    <span class="small py-1 mb-3 px-4 uppercase text-xs rounded-full font-bold ">large</span>
-
-                    <div class="flex  items-center justify-around mt-6">
-                        <span class="font-bold">RS. 200</span>
-
-                        <!-- stringy is used to convert the object to string -->
-                        <button  data-pizza="" class="add_to_cart py-1 px-6 rounded-full justify-between flex font-bold items-center">
-                            <span>+</span>            
-                            <span class=" ml-6">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="w-64">
-                <div> 
-                    <img class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="">
-                </div>
-                <div class="text-center">
-                    <h2 class="py-2 text-xl ">  </h2>
-                    <span class="small py-1 mb-3 px-4 uppercase text-xs rounded-full font-bold ">large</span>
-
-                    <div class="flex  items-center justify-around mt-6">
-                        <span class="font-bold">RS. 200</span>
-
-                        <!-- stringy is used to convert the object to string -->
-                        <button  data-pizza="" class="add_to_cart py-1 px-6 rounded-full justify-between flex font-bold items-center">
-                            <span>+</span>            
-                            <span class=" ml-6">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <div> 
-                    <img class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="">
-                </div>
-                <div class="text-center">
-                    <h2 class="py-2 text-xl ">  </h2>
-                    <span class="small py-1 mb-3 px-4 uppercase text-xs rounded-full font-bold ">large</span>
-
-                    <div class="flex  items-center justify-around mt-6">
-                        <span class="font-bold">RS. 200</span>
-
-                        <!-- stringy is used to convert the object to string -->
-                        <button  data-pizza="" class="add_to_cart py-1 px-6 rounded-full justify-between flex font-bold items-center">
-                            <span>+</span>            
-                            <span class=" ml-6">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <div> 
-                    <img class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="">
-                </div>
-                <div class="text-center">
-                    <h2 class="py-2 text-xl ">  </h2>
-                    <span class="small py-1 mb-3 px-4 uppercase text-xs rounded-full font-bold ">large</span>
-
-                    <div class="flex  items-center justify-around mt-6">
-                        <span class="font-bold">RS. 200</span>
-
-                        <!-- stringy is used to convert the object to string -->
-                        <button  data-pizza="" class="add_to_cart py-1 px-6 rounded-full justify-between flex font-bold items-center">
-                            <span>+</span>            
-                            <span class=" ml-6">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <div> 
-                    <img class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="">
-                </div>
-                <div class="text-center">
-                    <h2 class="py-2 text-xl ">  </h2>
-                    <span class="small py-1 mb-3 px-4 uppercase text-xs rounded-full font-bold ">large</span>
-
-                    <div class="flex  items-center justify-around mt-6">
-                        <span class="font-bold">RS. 200</span>
-
-                        <!-- stringy is used to convert the object to string -->
-                        <button  data-pizza="" class="add_to_cart py-1 px-6 rounded-full justify-between flex font-bold items-center">
-                            <span>+</span>            
-                            <span class=" ml-6">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-           
-            <div class="w-64">
-                <div> 
-                    <img class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="">
-                </div>
-                <div class="text-center">
-                    <h2 class="py-2 text-xl ">  </h2>
-                    <span class="small py-1 mb-3 px-4 uppercase text-xs rounded-full font-bold ">large</span>
-
-                    <div class="flex  items-center justify-around mt-6">
-                        <span class="font-bold">RS. 200</span>
-
-                        <!-- stringy is used to convert the object to string -->
-                        <button  data-pizza="" class="add_to_cart py-1 px-6 rounded-full justify-between flex font-bold items-center">
-                            <span>+</span>            
-                            <span class=" ml-6">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <% }) %>
+                
+                
             
         </div>
 

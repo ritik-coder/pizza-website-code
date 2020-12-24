@@ -1,0 +1,47 @@
+[R] Create directory structure
+[R] Create a NPM/ Yarn project and install all dependancies
+    - Dependancies
+        - express
+        - ejs express-ejs-layouts
+    - Dev dependancies
+        - nodemon
+[R] Create Express server - Create a server.js file
+[register] Git setup and first commit
+[R] Install Laravel Mix
+    - setup js and scss
+[R] Install tailwind css
+[R] Create Home page using Html and Css
+[R] Create Cart page
+    - order summary section
+    - empty cart section
+[R] - move routes to routes files
+[R] - Create dedicated controllers
+[R] Add to cart functionality
+    [R] Fetch all pizzas from db and show on home page
+    [R] Create menu model and put dummy Data
+        - connect to mongo db
+        - use connect-mongo for session store
+            - dependancies
+                - mongoose, express-session, connect-mongo, dotenv,express-flash
+    - axios to send ajax request
+    - install notification library npm i noty   https://ned.im/noty/#/
+[R] Create login page with route
+[R] Create register page with route
+[R] Build register crud
+    - dependancies express-flash express-session dotenv
+    - status code article https://www.restapitutorial.com/httpstatuscodes.html
+[R] Build login using passport
+    - install dependancies passport passport-local express-session
+[+] Create Order controller and link it in server.js
+[+] Create Orders view with table for customer and admin
+[+] Place order functionality
+[+] Show all my orders on custormer orders page
+[+] Show orders on admin orders page
+
+[+] Change order status
+[+] Create Orders single page with status
+[+] Order tracker
+    [+] Socket connection
+        - dependancies socket.io
+[ ] Build project for deployment
+[ ] Deploy project on live server
