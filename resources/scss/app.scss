@@ -30,6 +30,9 @@ nav li a{
     &:hover {
         background-color: $primary-hover;
     }
+    &:focus {
+        outline: none;
+    }
 }
 
 section.hero{
@@ -62,4 +65,118 @@ section.cart{
 .noty_theme__mint {
     border-radius: 50px!important;
     padding-left: 8px!important;
+}
+//single order page
+section.status{
+    background: $secondary;
+    min-height: calc(100vh - 86px);
+}
+.status-box{
+    padding:80px;
+}
+
+.status-box ul{
+    margin-left: 84px;
+}
+//order dots position
+.status-box ul li span{
+    position:relative;
+
+    
+}
+//order dots shape
+.status-box ul li span:before{
+    content:'';
+    position:absolute;
+    left:-36px;
+    top:5px;
+    background:$dark;
+    width:10px;
+    height:10px;
+    border-radius: 50px;
+    box-shadow: 0 1px 10px $secondary;
+}
+
+//icons
+.status-box ul li span:after{
+    font-family: "Line Awesome Free";
+    font-size: 46px;
+    left:-90px;
+    top:50%;
+    transform: translateY(-50%);
+    position: absolute;
+    font-weight:600;
+    color:'inherit';
+}
+
+.status-box ul li:nth-child(1) span:after {
+    content:'\f46c';
+    }
+.status-box ul li:nth-child(2) span:after {
+    content:'\f560';
+    }
+.status-box ul li:nth-child(3) span:after {
+    content:'\f818';
+    }
+.status-box ul li:nth-child(4) span:after {
+    content:'\f0d1';
+    }
+.status-box ul li:nth-child(5) span:after {
+    content:'\f582';
+    }
+
+
+//line
+.status-box ul li{
+    position: relative;}
+
+.status-box ul li:before{
+    content:'';
+    font-family: "Line Awesome Free";
+    position:absolute;
+    left:-32px;
+    // top:5px;
+    margin-top: 25px;
+    background:$dark;
+    width:3px;
+    height:80%;
+    border-radius: 50px;
+    box-shadow: 0 1px 10px $secondary;
+        }
+  // for removing the last line      
+.status-box ul li:nth-child(5) span:before {
+            box-shadow: 0 10px 1px 20px $secondary;
+            }     
+
+// for showing the completed shipment
+
+.status-box ul li.completed:before{
+    background:$gray;    }       
+.status-box ul li.completed span:after{
+    color:$gray;
+}
+.status-box ul li.completed span{
+    color:$gray;
+}
+.status-box ul li.completed span:before{
+    background:$gray;
+}
+
+// for showing the current shipment
+      
+.status-box ul li.current span:after{
+    color:$primary;
+}
+.status-box ul li.current span{
+    color:$primary;
+}
+.status-box ul li.current span:before{
+    background:$primary;
+}
+.status-box ul li small{
+float:right;
+font-size: 14px;
+padding-top: 5px;
+font-weight: bold;
+margin-top: 8px;
 }

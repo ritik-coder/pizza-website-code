@@ -10,6 +10,7 @@ const expresslayout=require('express-ejs-layouts')
 const mongoose=require('mongoose')
 const flash = require('express-flash') // work as middleware between server and client
 const session=require('express-session')
+const Emitter=require('events')
 
 const Mongodb= require('connect-mongo')(session) //basicially to store the cokkies  in the mongo db we use the connect-mongo
 // define the port on for server
@@ -48,6 +49,15 @@ const mongodb=new Mongodb({
    collection: 'sessions'
 })
 
+
+
+// Event Emitter
+const eventEmitter=new Emitter()           // If you want to use eventEmitterthen you need to use same instance at every where
+app.set('eventEmitter', eventEmitter)     // using this function we can bind eventEmitter now using only key we can use it everywhere 
+
+
+
+//session
 app.use(session({
     secret: process.env.COOKIES_SECRET,   // for acess the cokkies variable we use this syntax before variable
     resave: false,
@@ -85,6 +95,26 @@ require('./routes/web')(app)
 
 
 //listen the port
-app.listen(PORT,()=>{
+const server=app.listen(PORT,()=>{
    console.log(`your server is running on ${PORT} port`)
+})
+
+
+// make a socket
+const io = require('socket.io')(server)
+
+io.on('connection',(socket)=>{
+      //join  
+      socket.on('join',(orderId)=>{
+      socket.join(orderId)    // we created a room on the server of fixed id     
+    })
+})
+//orderedupdated event
+eventEmitter.on('orderUpdated',(data)=>{
+    io.to(`order_${data.id}`).emit('orderUpdated',data)
+})
+
+
+eventEmitter.on('orderPlaced',(order)=>{
+    io.to('adminRoom').emit('orderPlaced',order)
 })

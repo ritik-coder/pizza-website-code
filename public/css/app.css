@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .noty_layout_mixin,
 #noty_layout__centerRight,
 #noty_layout__centerLeft,
@@ -336,6 +338,10 @@ nav li a:hover {
   background-color: #b23301;
 }
 
+.btn:focus {
+  outline: none;
+}
+
 section.hero {
   background: #F8F8F8;
 }
@@ -371,5 +377,122 @@ section.cart {
 .noty_theme__mint {
   border-radius: 50px !important;
   padding-left: 8px !important;
+}
+
+section.status {
+  background: #F8F8F8;
+  min-height: calc(100vh - 86px);
+}
+
+.status-box {
+  padding: 80px;
+}
+
+.status-box ul {
+  margin-left: 84px;
+}
+
+.status-box ul li span {
+  position: relative;
+}
+
+.status-box ul li span:before {
+  content: "";
+  position: absolute;
+  left: -36px;
+  top: 5px;
+  background: #232323;
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  box-shadow: 0 1px 10px #F8F8F8;
+}
+
+.status-box ul li span:after {
+  font-family: "Line Awesome Free";
+  font-size: 46px;
+  left: -90px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  font-weight: 600;
+  color: "inherit";
+}
+
+.status-box ul li:nth-child(1) span:after {
+  content: "\F46C";
+}
+
+.status-box ul li:nth-child(2) span:after {
+  content: "\F560";
+}
+
+.status-box ul li:nth-child(3) span:after {
+  content: "\F818";
+}
+
+.status-box ul li:nth-child(4) span:after {
+  content: "\F0D1";
+}
+
+.status-box ul li:nth-child(5) span:after {
+  content: "\F582";
+}
+
+.status-box ul li {
+  position: relative;
+}
+
+.status-box ul li:before {
+  content: "";
+  font-family: "Line Awesome Free";
+  position: absolute;
+  left: -32px;
+  margin-top: 25px;
+  background: #232323;
+  width: 3px;
+  height: 80%;
+  border-radius: 50px;
+  box-shadow: 0 1px 10px #F8F8F8;
+}
+
+.status-box ul li:nth-child(5) span:before {
+  box-shadow: 0 10px 1px 20px #F8F8F8;
+}
+
+.status-box ul li.completed:before {
+  background: #ccc;
+}
+
+.status-box ul li.completed span:after {
+  color: #ccc;
+}
+
+.status-box ul li.completed span {
+  color: #ccc;
+}
+
+.status-box ul li.completed span:before {
+  background: #ccc;
+}
+
+.status-box ul li.current span:after {
+  color: #FE5F1E;
+}
+
+.status-box ul li.current span {
+  color: #FE5F1E;
+}
+
+.status-box ul li.current span:before {
+  background: #FE5F1E;
+}
+
+.status-box ul li small {
+  float: right;
+  font-size: 14px;
+  padding-top: 5px;
+  font-weight: bold;
+  margin-top: 8px;
 }
 

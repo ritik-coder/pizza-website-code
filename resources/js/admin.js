@@ -1,69 +1,9 @@
-
-
-
-// make a join request admin for rooom
-let adminareapath=window.location.pathname
-// console.log(adminareapath)
-if(adminareapath.includes('admin')){
-    socket.emit('join',`adminRoom`)
-}
-
-
-// eventEmitter.on('orderPlaced',(data)=>{
-    //     console.log(data)
-    //     io.to('adminRoom').emit('orderPlaced',data)
-    // })
-
-
-
-    
-    // orders.unshift(order)
-    // orderTableBody.innerHTML = ''
-    // orderTableBody.innerHTML = generateMarkup(orders)
-
-    // new Noty({  
-    //     type: 'success',
-    //     timeout:1000,
-    //     text: 'New Order',
-    //     progressBar: false
-
-    // }).show();
-
-
-
-
-    const eventEmitter=req.app.get('eventEmitter')
-                eventEmitter.emit('orderPlaced',result)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// code for admin.js
-
-
-import axios from 'axios'
+import axios from 'axios' //axios lrary is used for post the dat to other page
 import moment from 'moment'
+import Noty from 'noty'
 
 
-export function initAdmin() {
+    export function initAdmin(socket){
     const orderTableBody = document.querySelector('#orderTableBody')
     let orders = []
     let markup
@@ -80,8 +20,11 @@ export function initAdmin() {
         console.log(err)
     })
 
-    function renderItems(items) {
+
+
+    function renderItems(items) {``
         let parsedItems = Object.values(items)
+        // console.log(items)
         return parsedItems.map((menuItem) => {
             return `
                 <p>${ menuItem.item.name } - ${ menuItem.qty } pcs </p>
@@ -89,15 +32,31 @@ export function initAdmin() {
         }).join('')
       }
 
-    function generateMarkup(orders) {
+    // function rendername(customerId) {``
+    //     let parsedItems = Object.values(customerId)
+    //     // console.log(items)
+    //     return parsedItems.map((user) => {
+    //         return `
+    //             <p>${ user.name } </p>
+    //         `
+    //     })
+    //   }
+
+    function generateMarkup(orders) { 
         return orders.map(order => {
+            // console.log(order)
+            // var user = JSON.stringify(order.customerId)
+            // var obj = JSON.parse(user)
+
             return `
                 <tr>
                 <td class="border px-4 py-2 text-green-900">
                     <p>${ order._id }</p>
                     <div>${ renderItems(order.items) }</div>
                 </td>
-                <td class="border px-4 py-2">${ order.customerId.name}</td>
+
+               
+                <td class="border px-4 py-2">${order.customerId.name }</td>
                 <td class="border px-4 py-2">${ order.address }</td>
                 <td class="border px-4 py-2">
                     <div class="inline-block relative w-64">
@@ -133,50 +92,26 @@ export function initAdmin() {
                 <td class="border px-4 py-2">
                     ${ moment(order.createdAt).format('hh:mm A') }
                 </td>
-                <td class="border px-4 py-2">
-                    ${ order.paymentStatus ? 'paid' : 'Not paid' }
-                </td>
+               
             </tr>
         `
         }).join('')
     }
 
+    socket.on('orderPlaced',(order)=>{
+        
+        new Noty({  
+            type: 'success',
+            timeout:1000,
+            text: 'New Order',
+            progressBar: false
+            
+        }).show();
+        orders.unshift(order)
+        orderTableBody.innerHTML = ''
+        orderTableBody.innerHTML = generateMarkup(orders)
+
+})
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ordercontroller
-
-
-const Order= require('../../../models/order')
-
-function orderController(){
-    return {
-
-        index(req,res){
-                  Order.find({status:{$ne: 'completed'}},null,{sort:{'createdAt':-1}}).      //for finding the reverse order we used null,{sort:{'createdAt':-1}
-                  populate('customerId','-password').exec((err,orders)=>{
-                   if(req.xhr){
-                       return res.json(orders)
-                   }else{
-                      return res.render('admin/order')
-                  
-                  }
-                })
-
-            }
-
-      
-}
-}
-module.exports=orderController
+// module.exports = initorder
