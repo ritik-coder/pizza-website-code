@@ -1,12 +1,36 @@
 @import './variable';
 @import '~noty/src/noty.scss';
 @import '~noty/src/themes/mint.scss';
-body{
-    font-family:sans-serif;
-    color:$dark;
-    // height: 2000px;
+// body{
+//     font-family:sans-serif;
+//     color:$dark;
+//     // height: 2000px;
 
+// }
+//for responsive purpose
+@media(max-width:1060px)
+{ .container{
+    max-width:90%;
 }
+table{
+    display:block;
+    overflow-x:auto;
+    white-space: nowrap;
+}
+}
+
+
+@media(max-width:768px)
+{ 
+    .status-box ul li span:after{
+          font-size:34px;
+    }
+}
+
+
+
+
+
 nav li:last-child a{
     background-color:$primary;
     &:hover {
@@ -176,7 +200,8 @@ section.status{
 .status-box ul li small{
 float:right;
 font-size: 14px;
-padding-top: 5px;
+padding-top: 2px;
+padding-left: 2px;
 font-weight: bold;
-margin-top: 8px;
+margin-top: 6px;
 }

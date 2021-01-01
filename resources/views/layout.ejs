@@ -15,7 +15,7 @@
 </head>
 <body>
 
-    <nav class="container flex mx-auto item-center justify-between py-6">
+    <nav class="container flex mx-auto item-center justify-between py-4">
         <div >
             <a href="/"> 
                 <img src="/img/logo.png" alt="not">
@@ -24,7 +24,7 @@
             
         </div> 
         <div>
-            <ul class="flex item-center my-2">
+            <ul class="flex item-center my-3">
                 <li class="ml-6"> <a href="/">Menu</a></li>
                 <li class="ml-6"> <a href="/order">Orders</a></li>
                 <% if(user){ %>
@@ -42,7 +42,7 @@
                     <li class="ml-6">  <a href="/login">Login</a> </li>
                     
                    <% } %>
-                <li class="ml-6">  <a href="/cart" class="inline-block px-4 py-2 rounded-full flex">
+                <li class="ml-6">  <a href="/cart" class="inline-block px-4 py-1 rounded-full flex">
                     <span id="cartcounter" class="text-white font-bold pr-1"><%= session.cart ? session.cart.totalqty : '' %></span>
                     <img src="/img/cart.png" alt="">
                 </a> </li>

@@ -40,8 +40,8 @@
 
 [R] Change order status
 [+] Create Orders single page with status
-[+] Order tracker
-    [+] Socket connection
+[R] Order tracker
+    [R] Socket connection
         - dependancies socket.io
 [ ] Build project for deployment
 [ ] Deploy project on live server
